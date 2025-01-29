@@ -3,47 +3,6 @@
 
 float pi = 3.145927f;
 
-
-class Car {
-	
-public:
-	std::string make;
-	std::string model;
-	int year;
-	float speed = 0.0f;
-
-	//Methods
-	void outputDetails();
-
-	void accelerate(const float);
-	Car(const std::string, const std::string, const int);
-
-};
-
-
-
-void Car::outputDetails()
-{
-	std::cout << "\nMake: " << make
-		<< "\nModel: " << model
-		<< "\nYear: " << year << std::endl;
-}
-
-void Car::accelerate(const float increment)
-{
-	speed += increment;
-	std::cout << "\nThe car has accelerated to " << speed << " mph." << std::endl;
-}
-
-Car::Car(const std::string makeInput, const std::string modelInput, const int yearInput)
-{
-	make = makeInput;
-	model = modelInput;
-	year = yearInput;
-	std::cout << "\nCar object created" << std::endl;
-}
-
-
 //power function
 float power(const float x, const int y)
 {
@@ -172,6 +131,9 @@ int main()
 
 	//accelerate the delorean
 	delorean.accelerate(88.0f);
+
+	//Conver speed from mph to kph
+	std::cout << "\n" << 88 << " mph is equivalent to " << Car::mph2kph(88.0f) << " kph." << std::endl;
 
 	return 0;
 }
